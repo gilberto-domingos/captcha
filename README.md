@@ -1,4 +1,6 @@
-# CAPTCHA - Diferenciar Computadores e Humanos - (Completely Automated Public Turing test to tell Computers and Humans Apart )
+# CAPTCHA - Diferenciar Computadores e Humanos
+
+### CAPTCHA - (Completely Automated Public Turing test to tell Computers and Humans Apart )
 
 ![Captcha](src/assets/captcha.png)
 
