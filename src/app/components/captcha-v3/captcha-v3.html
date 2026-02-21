@@ -1,0 +1,27 @@
+<div class="captcha-container">
+  <h2>reCAPTCHA v3</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="captcha-form">
+    <div class="form-field">
+      <label for="name">Nome</label>
+      <input id="name" type="text" formControlName="name" placeholder="Digite seu nome" />
+      <div class="error" *ngIf="form.controls['name'].invalid && form.controls['name'].touched">
+        Nome é obrigatório
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="Digite seu email" />
+      <div class="error" *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+        Email inválido
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      Enviar
+    </button>
+  </form>
+
+  <p class="info">O reCAPTCHA v3 é invisível. Após enviar, o token será exibido no console.</p>
+</div>

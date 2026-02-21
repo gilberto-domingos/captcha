@@ -1,0 +1,67 @@
+<div class="captcha-container">
+  <h2>Verificação de segurança</h2>
+  <p>Confirme que você não é um robô</p>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="captcha-form">
+    <div class="form-field">
+      <label for="name">Nome</label>
+      <input id="name" type="text" formControlName="name" placeholder="Digite seu nome" />
+
+      @if (form.controls.name.invalid && form.controls.name.touched) {
+        <div class="error">Nome é obrigatório</div>
+      }
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="Digite seu email" />
+
+      @if (form.controls.email.invalid && form.controls.email.touched) {
+        <div class="error">
+          @if (form.controls.email.errors?.['required']) {
+            Email é obrigatório
+          }
+          @if (form.controls.email.errors?.['email']) {
+            Email inválido
+          }
+        </div>
+      }
+    </div>
+
+    <div class="form-field">
+      <label for="password">Senha</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="Digite sua senha"
+      />
+
+      @if (form.controls.password.invalid && form.controls.password.touched) {
+        <div class="error">
+          @if (form.controls.password.errors?.['required']) {
+            Senha é obrigatória
+          }
+          @if (form.controls.password.errors?.['minlength']) {
+            Mínimo de 6 caracteres
+          }
+        </div>
+      }
+    </div>
+
+    <div class="captcha-box">
+      <re-captcha
+        formControlName="recaptcha"
+        siteKey="6Lf-lXIsAAAAAIgPn-2Eg6vZNywBbx7thWNv8u1l"
+        (resolved)="onCaptchaResolved($event)"
+      >
+      </re-captcha>
+
+      @if (form.controls.recaptcha.invalid && form.controls.recaptcha.touched) {
+        <div class="error">Confirme que você não é um robô</div>
+      }
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Enviar</button>
+  </form>
+</div>
