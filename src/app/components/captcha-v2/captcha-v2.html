@@ -52,7 +52,7 @@
     <div class="captcha-box">
       <re-captcha
         formControlName="recaptcha"
-        siteKey="6Lf-lXIsAAAAAIgPn-2Eg6vZNywBbx7thWNv8u1l"
+        [siteKey]="siteKey"
         (resolved)="onCaptchaResolved($event)"
       >
       </re-captcha>

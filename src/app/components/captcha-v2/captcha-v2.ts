@@ -11,6 +11,7 @@ import { RecaptchaModule } from 'ng-recaptcha';
 })
 export class CaptchaV2 {
   private fb = inject(FormBuilder);
+  siteKey = '6Lf-lXIsAAAAAIgPn-2Eg6vZNywBbx7thWNv8u1l';
 
   form = this.fb.nonNullable.group({
     name: ['', Validators.required],
