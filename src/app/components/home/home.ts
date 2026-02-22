@@ -19,4 +19,8 @@ export class Home {
   goToV2() {
     this.router.navigate(['/captchaV2']);
   }
+
+  goToManual() {
+    this.router.navigate(['/manual']);
+  }
 }

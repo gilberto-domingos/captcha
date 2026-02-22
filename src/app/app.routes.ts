@@ -17,4 +17,9 @@ export const routes: Routes = [
     path: 'captchaV2',
     loadComponent: () => import('./components/captcha-v2/captcha-v2').then((m) => m.CaptchaV2),
   },
+  {
+    path: 'manual',
+    loadComponent: () =>
+      import('./components/captcha-manual/captcha-manual').then((m) => m.CaptchaManual),
+  },
 ];

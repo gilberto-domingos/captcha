@@ -1,0 +1,25 @@
+.recaptcha-wrapper {
+  margin-top: 10px;
+}
+
+.recaptcha-error {
+  font-size: 12px;
+  color: #f44336;
+  margin-top: 4px;
+}
+
+.captcha-container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 28px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+
+  h2 {
+    margin-bottom: 6px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+}

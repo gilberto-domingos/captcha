@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="captcha-container">
+  <!--  another existent fields -->
+
+  <div class="recaptcha-wrapper">
+    <div id="recaptcha-container"></div>
+
+    @if (form.get('recaptcha')?.invalid && form.get('recaptcha')?.touched) {
+      <div class="recaptcha-error">Confirme que você não é um robô</div>
+    }
+  </div>
+</form>
